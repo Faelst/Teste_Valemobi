@@ -1,0 +1,19 @@
+Create table tb_customer_account (
+	id_customer serial,
+	cpf_cnpj varchar(50) not null unique,
+	nm_customer varchar(50) not null unique,
+	is_active boolean ,
+	vl_total decimal(10),
+
+	constraint PK_id_customer Primary key (id_customer)
+);
+
+select avg(vl_total) from tb_customer_account where (vl_total>560 and (id_customer>=1 and id_customer<100));
+
+select id_customer, nm_customer , vl_total
+from tb_customer_account
+where (vl_total>560 and (id_customer>=1 and id_customer<5));
+
+//IMPORTANTE 
+CASO FOR EXECUTAR O CODIGO VERIFIQUE SE AS PORTAS , USUARIO E SENHA DO BANCO ESTAO CORRESTAS.
+PELO FATO DE EU TER TIRADO AS SENHAS PADRÕES
